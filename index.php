@@ -102,7 +102,7 @@
                             <div class="carousel-btn">
                                 <a class="btn" href="loginFonctio.php"><i class="fa fa-link"></i>Connexion</a>
                                 <a class="btn btn-play" data-toggle="modal" data-src="https://www.youtube.com/watch?v=d1VN6h8m498" data-target="#videoModal"><i class="fa fa-play"></i>Regarder Video</a>
-                                <a class="btn" href="loginFonctio.php"><i class="fa fa-link"></i>Vous êtes un admin ?</a>
+                                <a class="btn" href="admin/index.php"><i class="fa fa-link"></i>Vous êtes un admin ?</a>
 
                             </div>
                         </div>
@@ -119,7 +119,7 @@
                             <div class="carousel-btn">
                                 <a class="btn" href="loginFonctio.php"><i class="fa fa-link"></i>Connexion</a>
                                 <a class="btn btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal"><i class="fa fa-play"></i>Regarder Video</a>
-                                <a class="btn" href="loginFonctio.php"><i class="fa fa-link"></i>Vous êtes un admin ?</a>
+                                <a class="btn" href="admin/index.php"><i class="fa fa-link"></i>Vous êtes un admin ?</a>
                             </div>
                         </div>
                     </div>
