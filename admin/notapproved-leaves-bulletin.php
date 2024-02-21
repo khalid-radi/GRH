@@ -76,14 +76,14 @@ else{
                                             <th width="200">Date d'affichage</th>
 
                                             <th>Status</th>
-                                            <th align="center">Action</th>
+                                            <th aligne="center">Action</th>
                                         </tr>
                                     </thead>
                                  
                                     <tbody>
 <?php 
-$status=2;
-$sql = "SELECT tblleaves.id as lid,tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from tblleaves join tblemployees on tblleaves.empid=tblemployees.id where tblleaves.Status=:status order by lid desc";
+$status=0;
+$sql = "SELECT tblbulletin.id as lid,tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblbulletin.PostingDate,tblbulletin.Status from tblbulletin join tblemployees on tblbulletin.empid=tblemployees.id where tblbulletin.Status=:status order by lid desc";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->execute();
@@ -113,7 +113,7 @@ if($stats==1){
                                              </td>
 
           <td>
-           <td><a href="leave-details.php?leaveid=<?php echo htmlentities($result->lid);?>" class="waves-effect waves-light btn blue m-b-xs"  > Voire Details</a></td>
+           <td><a href="bulletin-details.php?leaveid=<?php echo htmlentities($result->lid);?>" class="waves-effect waves-light btn blue m-b-xs"  > Voir Détails</a></td>
                                     </tr>
                                          <?php $cnt++;} }?>
                                     </tbody>

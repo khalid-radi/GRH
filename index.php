@@ -37,7 +37,7 @@
                             </div>
                             <div class="text">
                                 <i class="fa fa-phone-alt"></i>
-                                <h2>+212 694459157</h2>
+                                <h2>+212 500449997</h2>
                             </div>
                             <div class="text">
                                 <i class="fas fa-envelope"></i>
@@ -86,6 +86,7 @@
                             <div class="carousel-btn">
                                 <a class="btn" href="loginFonctio.php"><i class="fa fa-link"></i>Connexion</a>
                                 <a class="btn btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal"><i class="fa fa-play"></i>Regarder Video</a>
+                                <a class="btn" href="admin/index.php"><i class="fa fa-link"></i>Vous êtes un admin ?</a>
                             </div>
                         </div>
                     </div>
@@ -101,6 +102,8 @@
                             <div class="carousel-btn">
                                 <a class="btn" href="loginFonctio.php"><i class="fa fa-link"></i>Connexion</a>
                                 <a class="btn btn-play" data-toggle="modal" data-src="https://www.youtube.com/watch?v=d1VN6h8m498" data-target="#videoModal"><i class="fa fa-play"></i>Regarder Video</a>
+                                <a class="btn" href="loginFonctio.php"><i class="fa fa-link"></i>Vous êtes un admin ?</a>
+
                             </div>
                         </div>
                     </div>
@@ -116,6 +119,7 @@
                             <div class="carousel-btn">
                                 <a class="btn" href="loginFonctio.php"><i class="fa fa-link"></i>Connexion</a>
                                 <a class="btn btn-play" data-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-target="#videoModal"><i class="fa fa-play"></i>Regarder Video</a>
+                                <a class="btn" href="loginFonctio.php"><i class="fa fa-link"></i>Vous êtes un admin ?</a>
                             </div>
                         </div>
                     </div>
@@ -146,13 +150,13 @@
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-md-6">
-                        <div class="about-img">
-                            <div class="about-img-1">
+<!--                         <div class="about-img">
+ -->                            <div class="about-img-1">
                                 <img src="img/logo-f.jpg" alt="Image">
                             </div>
                             
-                        </div>
-                    </div>
+<!--                         </div>
+ -->                    </div>
                     <div class="col-md-6">
                         <div class="section-header">
                         <h2>À propos de Nous</h2>
@@ -184,7 +188,7 @@
                             <img src="img/icon-4.png" alt="Icon">
                             <h3>Ressources humaines</h3>
                             <p>
-                            Service des ressources humaines : a pour objet d’assurer la gestion du personnel de la commune sur les deux niveaux, administratifs et financière (congé, la paie, les attestations de travail, la formation, les absences…) 
+                            Service des ressources humaines : a pour objet d’assurer la gestion du personnel de la commune sur les deux niveaux, administratifs et financière (congé, les documents, les attestations , les absences…) 
                             </p>
                         </div>
                     </div>
@@ -220,7 +224,8 @@
               </dl>
               <dl class="contact-list">
                 <dt>Téléphone:</dt>
-                <dd>+212 694-4591579<span></span>
+                <dd>+212 500449997
+<span></span>
                 </dd>
               </dl>
             </div>

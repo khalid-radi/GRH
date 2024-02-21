@@ -76,7 +76,7 @@ else{
 
                                              <th width="180">Date d'affichage</th>                 
                                             <th>Status</th>
-                                            <th align="center">Action</th>
+                                            <th aligne="center">Action</th>
                                         </tr>
                                     </thead>
                                  
@@ -103,14 +103,14 @@ if($stats==1){
                                                  <?php } if($stats==2)  { ?>
                                                 <span style="color: orange">En cours</span>
                                                  <?php } if($stats==0)  { ?>
- <span style="color: blue">Traitement en cours</span>
- <?php } ?>
+                                                <span style="color: blue">Traitement en cours</span>
+                                                <?php } ?>
 
 
                                              </td>
 
           <td>
-           <td><a href="leave-details.php?leaveid=<?php echo htmlentities($result->lid);?>" class="waves-effect waves-light btn blue m-b-xs"  > Voir Détails</a></td>
+           <td><a href="bulletin-details.php?leaveid=<?php echo htmlentities($result->lid);?>" class="waves-effect waves-light btn blue m-b-xs"  > Voir Détails</a></td>
                                     </tr>
                                          <?php $cnt++;} }?>
                                     </tbody>

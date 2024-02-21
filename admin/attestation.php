@@ -90,7 +90,7 @@ $cnt=1;
 if($query->rowCount() > 0)
 {
 foreach($results as $result)
-{         
+{           
       ?>    
 
                                         <tr>
@@ -112,7 +112,7 @@ if($stats==1){
                                              </td>
 
           <td>
-           <td><a href="leave-details.php?leaveid=<?php echo htmlentities($result->lid);?>" class="waves-effect waves-light btn blue m-b-xs"  > Voir Détails</a></td>
+           <td><a href="attestation-details.php?leaveid=<?php echo htmlentities($result->lid);?>" class="waves-effect waves-light btn blue m-b-xs"  > Voir Détails</a></td>
                                     </tr>
                                          <?php $cnt++;} }?>
                                     </tbody>

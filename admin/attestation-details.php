@@ -11,7 +11,7 @@ else{
 // code for update the read notification status
 $isread=1;
 $did=intval($_GET['leaveid']);  
-date_default_timezone_set('Asia/Kolkata');
+date_default_timezone_set('Africa/Casablanca');
 $admremarkdate=date('Y-m-d G:i:s ', strtotime("now"));
 $sql="update tblleaves set IsRead=:isread where id=:did";
 $query = $dbh->prepare($sql);
@@ -27,14 +27,14 @@ $description=$_POST['description'];
 $status=$_POST['status'];   
 date_default_timezone_set('Asia/Kolkata');
 $admremarkdate=date('Y-m-d G:i:s ', strtotime("now"));
-$sql="update tblleaves set AdminRemark=:description,Status=:status,AdminRemarkDate=:admremarkdate where id=:did";
+$sql="update tblattestation set AdminRemark=:description,Status=:status,AdminRemarkDate=:admremarkdate where id=:did";
 $query = $dbh->prepare($sql);
 $query->bindParam(':description',$description,PDO::PARAM_STR);
 $query->bindParam(':status',$status,PDO::PARAM_STR);
 $query->bindParam(':admremarkdate',$admremarkdate,PDO::PARAM_STR);
 $query->bindParam(':did',$did,PDO::PARAM_STR);
 $query->execute();
-$msg="congé mis à jour avec succès";
+$msg="status mis à jour avec succès";
 }
 
 
@@ -45,7 +45,7 @@ $msg="congé mis à jour avec succès";
     <head>
         
         <!-- Title -->
-        <title>Admin | Détails du congé </title>
+        <title>Admin | Détails Attestation </title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
         <meta charset="UTF-8">
@@ -89,21 +89,21 @@ $msg="congé mis à jour avec succès";
             <main class="mn-inner">
                 <div class="row">
                     <div class="col s12">
-                        <div class="page-title" style="font-size:24px;">Détails du congé</div>
+                        <div class="page-title" style="font-size:24px;">Détails de votre demande d'attestation</div>
                     </div>
                    
                     <div class="col s12 m12 l12">
                         <div class="card">
                             <div class="card-content">
-                                <span class="card-title">Détails congé</span>
+                                <span class="card-title">Détails demande</span>
                                 <?php if($msg){?><div class="succWrap"><strong style="color:green;">SUCCÈS</strong> : <?php echo htmlentities($msg); ?> </div><?php }?>
                                 <table id="example" class="display responsive-table ">
                                
                                  
                                     <tbody>
-<?php
+<?php 
 $lid=intval($_GET['leaveid']);
-$sql = "SELECT tblleaves.id as lid,tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblemployees.Gender,tblemployees.City,tblemployees.EmailId,tblleaves.LeaveType,tblleaves.ToDate,tblleaves.FromDate,tblleaves.Description,tblleaves.PostingDate,tblleaves.Status,tblleaves.AdminRemark,tblleaves.AdminRemarkDate from tblleaves join tblemployees on tblleaves.empid=tblemployees.id where tblleaves.id=:lid";
+$sql = "SELECT tblattestation.id as lid,tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblemployees.Gender,tblemployees.City,tblemployees.EmailId,tblattestation.Description,tblattestation.PostingDate,tblattestation.Status,tblattestation.AdminRemark,tblattestation.AdminRemarkDate from tblattestation join tblemployees on tblattestation.empid=tblemployees.id where tblattestation.id=:lid";
 $query = $dbh -> prepare($sql);
 $query->bindParam(':lid',$lid,PDO::PARAM_STR);
 $query->execute();
@@ -116,7 +116,7 @@ foreach($results as $result)
       ?>  
 
                                         <tr>
-                                            <td style="font-size:16px;"> <b>Nome fonctionnaire :</b></td>
+                                            <td style="font-size:16px;"> <b>Nom fonctionnaire :</b></td>
                                               <td><a href="editemployee.php?empid=<?php echo htmlentities($result->id);?>" target="_blank">
                                                 <?php echo htmlentities($result->FirstName." ".$result->LastName);?></a></td>
                                               <td style="font-size:16px;"><b>Matricule Fonc:</b></td>
@@ -135,10 +135,6 @@ foreach($results as $result)
                                         </tr>
 
   <tr>
-                                             <td style="font-size:16px;"><b>Type de congé :</b></td>
-                                            <td><?php echo htmlentities($result->LeaveType);?></td>
-                                             <td style="font-size:16px;"><b>Date de congé . :</b></td>
-                                            <td>De <?php echo htmlentities($result->FromDate);?> à <?php echo htmlentities($result->ToDate);?></td>
                                             <td style="font-size:16px;"><b>Date d'affichage</b></td>
                                            <td><?php echo htmlentities($result->PostingDate);?></td>
                                         </tr>
@@ -150,7 +146,7 @@ foreach($results as $result)
                                         </tr>
 
 <tr>
-<td style="font-size:16px;"><b>Statut de congé :</b></td>
+<td style="font-size:16px;"><b>Statut d'attestation :</b></td>
 <td colspan="5"><?php $stats=$result->Status;
 if($stats==1){
 ?>
@@ -179,7 +175,7 @@ echo htmlentities($result->AdminRemark);
 <td style="font-size:16px;"><b>Date de confirmation : </b></td>
 <td colspan="5"><?php
 if($result->AdminRemarkDate==""){
-  echo "pas en cours...";
+  echo "pas en cours...";  
 }
 else{
 echo htmlentities($result->AdminRemarkDate);
@@ -200,8 +196,7 @@ if($stats==0)
         <h4>Confirmation</h4>
           <select class="browser-default" name="status" required="">
                                             <option value="">Choisissez votre option</option>
-                                            <option value="1">Confirmé</option>
-                                            <option value="2">Non Confirmé</option>
+                                            <option value="1">Disponible</option>
                                         </select></p>
                                         <p><textarea id="textarea1" name="description" class="materialize-textarea" name="description" placeholder="Description" length="500" maxlength="500" required></textarea></p>
     </div>
